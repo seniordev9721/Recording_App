@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 // import { withRouter } from "react-router-dom";
+
 export default class Gradient extends Component {
 
   componentDidMount = () => {
@@ -15,23 +16,30 @@ export default class Gradient extends Component {
     const gradientBackground  = 'purple';
     const data = Array.from({ length: gradientHeight });
       return (
-          <View style={{flex:1,justifyContent:'center'}}>
-              {data.map((_, i) => (
-                  <View
-                      key={i}
-                      style={{
-                          position: 'absolute',
-                          backgroundColor: gradientBackground,
-                          height: 1,
-                          bottom: (gradientHeight - i),
-                          right: 0,
-                          left: 0,
-                          zIndex: 2,
-                          opacity: (1 / gradientHeight) * (i + 1)
-                      }}
-                  />
-              ))}
-              <Text style={{textAlign:'center',alignSelf:'center',fontSize:35}}>AGRICALL</Text>
+          // <View style={{flex:1,justifyContent:'center'}}>
+          //     {data.map((_, i) => (
+          //         <View
+          //             key={i}
+          //             style={{
+          //                 position: 'absolute',
+          //                 backgroundColor: gradientBackground,
+          //                 height: 1,
+          //                 bottom: (gradientHeight - i),
+          //                 right: 0,
+          //                 left: 0,
+          //                 zIndex: 2,
+          //                 opacity: (1 / gradientHeight) * (i + 1)
+          //             }}
+          //         />
+          //     ))}
+          //     <Text style={{textAlign:'center',alignSelf:'center',fontSize:35}}>AGRICALL</Text>
+          // </View>
+          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Image
+              style={{ maxWidth: '100%', maxHeight: 800 }}
+              source={require('../assets/splash.png')}
+            />
+            <Text style={{position:'absolute',width:'100%',top:'50%',textAlign:'center',fontSize:35}}>A G R I C A L L</Text>
           </View>
       );
   }
